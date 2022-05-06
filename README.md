@@ -1,3 +1,3 @@
 # to-do-list
 
-## simple game
+# simple game

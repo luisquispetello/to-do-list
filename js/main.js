@@ -144,8 +144,7 @@ function clearElement(element) {
 }
 
 function switchTheme() {
-    let element = document.body;
-    element.classList.toggle('dark-mode');
+    document.body.classList.toggle('dark-mode');
 }
 
 render()

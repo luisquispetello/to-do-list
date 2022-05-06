@@ -1,0 +1,254 @@
+:root {
+    --color-primary: #3e80c1;
+    --color-light-2: #d8e6f3;
+    --color-light: #ecf2f9;
+    --color-dark: #19334d;
+    --color-dark-2: #254d74;
+    --color-warning: #c13e5f;
+    --color-cta: #3ec1a0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: var(--color-light-2);
+    color: var(--color-dark-2);
+}
+
+.dark-mode {
+    background-color: var(--color-dark);
+    color: var(--color-light-2);
+}
+
+.container {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.btn-dark{
+    height: 40px;
+    font-size: 0.5em;
+    font-weight: 300;
+    border-radius: 0 0 .5em;
+    border: 0;
+    padding: 1em;
+    background-color: var(--color-dark-2);
+    color: var(--color-light);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.task-list-title {
+    font-weight: 300;
+}
+
+.active-list{
+    font-weight: 500;
+}
+
+.title {
+    font-size:  calc(4vw + 1rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+}
+
+.all-tasks{
+    width: 300px;
+}
+
+.task-list{
+    line-height: 1.7;
+    list-style: circle;
+    padding-left: 1em;
+}
+
+.list-name {
+    cursor: pointer;
+}
+
+.list-name:hover {
+    opacity: 0.7;
+}
+
+.new{
+    font-weight: 300;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    box-shadow:inset 0px -1px 0px 0px currentColor;
+    outline: none;
+    width: 100%;
+    padding: 0.3em;
+    transition: box-shadow 150ms ease-in;
+}
+
+.new:focus {
+    box-shadow:inset 0px -2px 0px 0px currentColor;
+}
+
+.new:focus::placeholder {
+    opacity: 0.2;
+}
+
+.todo-list{
+    --spacer: 2rem;
+
+    color: var(--color-dark-2);
+    box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px 1px;
+    border-radius: .2em;
+}
+
+.todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    color: var(--color-light);
+    background-color: var(--color-primary);
+    padding: var(--spacer);
+    border-radius: .2em .2em 0 0;
+}
+
+.list-title {
+    font-size: 1em;
+    margin: 0;
+}
+
+.task-count {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.todo-body {
+    padding: var(--spacer);
+    position: relative;
+    background-color: var(--color-light);
+    border-radius: 0 0 .2em .2em;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.task label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1.3em;
+    position: relative;
+}
+
+.task{
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.task::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0.1em;
+    height: 1px;
+    background: currentColor;
+    opacity: .1;
+}
+
+form {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    color: inherit;
+    font-size: 0.8em;
+}
+
+.btn.create {
+    font-weight: 700;
+    margin-right: 0.25em;
+    transition: opacity 250ms ease-in;
+    color: var(--color-cta);
+}
+
+.new-task-creator .task{
+    margin: 0;
+}
+
+.custom-checkbox{
+    --size: .75em;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: var(--size);
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+    position: relative;
+    top: .02em;
+}
+
+.task:hover .custom-checkbox {
+    transform: scale(1.2);
+    color: var(--color-primary);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+    background-color: var(--color-primary);
+    /* background-image: url(/toDoApp/css/check.svg); */
+    border-color: var(--color-primary);
+    box-shadow: inset 0 0 0 3px var(--color-light);
+}
+
+
+[type="checkbox"]:checked + label{
+    opacity: 0.4;
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    left: 1.5em;
+    right: 0;
+    height: 3px;
+    background-color: currentColor;
+    top: 50%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.delete-stuff {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -2em;
+    color: var(--color-primary);
+}
+
+.btn.delete {
+    transition: color 200ms;
+}
+
+.btn.delete:hover {
+    color: var(--color-warning);
+}

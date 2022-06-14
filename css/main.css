@@ -61,7 +61,7 @@ body {
 }
 
 .all-tasks{
-    width: 300px;
+    max-width: 290px;
 }
 
 .task-list{
@@ -179,6 +179,7 @@ form {
 .btn.create {
     font-weight: 700;
     margin-right: 0.25em;
+    padding: 0;
     transition: opacity 250ms ease-in;
     color: var(--color-cta);
 }
